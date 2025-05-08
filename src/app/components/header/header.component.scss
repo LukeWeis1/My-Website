@@ -5,15 +5,12 @@
     padding: 20px;
     background-color: var(--header-color);
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 25px;
 }
 
 .header-left {
     display: flex;
-    align-items: center;
     gap: 10px;
 }
 
@@ -57,6 +54,13 @@ nav ul li a {
     font-weight: normal;
 }
 
+//Makes font bigger and bold if in section
+.nav ul li.active a {
+    font-weight: bold;
+    font-size: 24px
+  }
+
+//Link color if hovering
 nav ul li a:hover {
     color: var(--link-color);
 }

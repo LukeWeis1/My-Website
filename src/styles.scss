@@ -1,9 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
     --background-color: black; /* Default background color */
     --text-color: white; /* Default text color */
     --header-color: #383838; /*Default header color*/
     --link-color: lightblue; /*Default link color*/
-  }
+}
   
 
 body{
@@ -17,7 +21,7 @@ body{
       ),
       var(--background-color);
     background-size: 150%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 

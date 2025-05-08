@@ -1,12 +1,7 @@
 .flex-Container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: flex-start;
-}
-
-.switch{
-    justify-content: flex-end !important;
-    margin-top: 20px;
 }
 
 .column {
@@ -27,3 +22,24 @@
     width: 500px;
     height: auto;
 }
+
+@media (max-width: 930px) {
+    #home {
+        padding-top: 70px;
+    }
+    
+    .flex-Container {
+      flex-direction: column; /* ✅ stack columns vertically */
+    }
+  
+    .column {
+        //margin-bottom: 20px;
+        width: 100%; /* optional, make full width on mobile */
+    }
+  
+    .profile-Picture{
+        width: auto;
+        height: 500px;
+    }
+  }
+  

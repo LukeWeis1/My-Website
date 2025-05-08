@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,6 +11,8 @@ export class HeaderComponent {
   isMenuOpen = false;
 
   hasDarkMode = true;
+
+  @Input() activeSection: string = '';
 
   toggleDarkMode(): void{
     const root = document.documentElement;
