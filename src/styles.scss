@@ -1,0 +1,46 @@
+:root {
+    --background-color: black; /* Default background color */
+    --text-color: white; /* Default text color */
+    --header-color: #383838; /*Default header color*/
+    --link-color: lightblue; /*Default link color*/
+  }
+  
+
+body{
+    background: linear-gradient(
+        to top right,
+        var(--background-color),
+        rgba(0, 0, 139, 0.1),
+        rgba(150, 150, 150, 0.2),
+        rgba(0, 0, 139, 0.1),
+        var(--background-color)
+      ),
+      var(--background-color);
+    background-size: 150%;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Futura', sans-serif;
+    font-size: 60px; 
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+h2{
+    font-family: 'Arial', sans-serif;
+    font-size: 24px; 
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+h3{
+    font-family: 'Futura', sans-serif;
+    font-size: 40px; 
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 90px;
+}
+

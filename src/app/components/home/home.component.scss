@@ -1,0 +1,29 @@
+.flex-Container {
+    display: flex;
+    height: 100vh;
+    justify-content: flex-start;
+}
+
+.switch{
+    justify-content: flex-end !important;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.item{
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.profile-Picture{
+    width: 500px;
+    height: auto;
+}

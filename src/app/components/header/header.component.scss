@@ -1,0 +1,197 @@
+.header {
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--header-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right {
+    flex-shrink: 0;
+  }
+
+.mainPage{
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mainPage:hover {
+    color: var(--link-color);
+}
+
+.nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    align-items: center;
+}
+
+nav ul li a {
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: normal;
+}
+
+nav ul li a:hover {
+    color: var(--link-color);
+}
+
+
+//Hides mobile menu by default
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+//Code to show mobile menu if in mobile view
+@media (max-width: 930px) {
+    .header {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .menu-toggle {
+      display: block;
+      margin-left: 10px;
+    }
+  
+    .nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--header-color);
+      padding-bottom: 10px;
+    }
+  
+    .nav.open {
+      display: block;
+    }
+  
+    .nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 0;
+      margin: 0;
+    }
+  
+    .nav ul li a {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  
+    .header-right {
+      margin-left: auto;
+    }
+}
+  
+//Code for Dark Mode Button
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 50px;
+    top: 0px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.4s;
+}
+
+/* Sun & Moon Icons */
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.sun {
+    left: 4px;
+}
+
+.moon {
+    right: 4px;
+    opacity: 0; /* Hidden by default */
+}
+
+/* Toggle On */
+input:checked + .slider {
+    background-color: #666466;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #000000;
+}
+
+/* Show Moon, Hide Sun */
+input:checked + .slider .sun {
+    opacity: 0;
+}
+
+input:checked + .slider .moon {
+    opacity: 1;
+}

@@ -1,0 +1,27 @@
+<div class="header">
+    <div class="header-left">
+      <a routerLink="/home" class="mainPage">Luke Weis</a>
+      <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">☰</button>
+    
+  
+    <nav class="nav" [class.open]="isMenuOpen">
+      <ul>
+        <li><a href="/">Education</a></li>
+        <li><a href="/">Experience</a></li>
+        <li><a href="/">Projects</a></li>
+        <li><a href="/">Involvement</a></li>
+        <li><a routerLink="/contact-me">Contact Me</a></li>
+      </ul>
+    </nav>
+</div>
+  
+    <div class="header-right">
+      <label class="switch">
+        <input type="checkbox" checked (change)="toggleDarkMode()" />
+        <span class="slider">
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="contactMe">
+<h3>Contact Me</h3>
+<form (submit)="sendEmail($event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name = "userName" [(ngModel)]="userName" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name = "userEmail" [(ngModel)]="userEmail" required>
+  
+    <label for="message">Message:</label>
+    <textarea id="message" name = "userMessage" [(ngModel)]="userMessage" required></textarea>
+  
+    <button type="submit">Send</button>
+  </form>
+  
+  <div *ngIf="messageSent" class="messageSentText">
+    <p>✅ Your message has been sent!</p>
+  </div>
+</div>

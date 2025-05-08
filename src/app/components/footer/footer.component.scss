@@ -1,0 +1,37 @@
+.footer {
+    display: flex;
+    justify-content: space-between; /* Ensures left and right content stay on one line */
+    align-items: center; /* Vertically align items */
+    padding: 6px 0px;
+    background-color: var(--header-color);
+    color: var(--text-color);
+    width: 100%; /* Ensure it spans the full width */
+    box-sizing: border-box; /* Prevents padding from causing overflow */
+    overflow: hidden; /* Ensures content doesn’t go off-screen */
+    padding-left: 30px;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-left{
+    text-align: left;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.footer-right a {
+    color: var(--text-color);
+    margin-left: 15px; /* Adds spacing between icons */
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    color: var(--link-color); /* Change color on hover */
+}
