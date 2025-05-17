@@ -1,3 +1,7 @@
+section {
+    scroll-margin-top: 70px;
+  }
+
 .flex-Container {
     display: flex;
     min-height: 100vh;
@@ -19,7 +23,7 @@
 }
 
 .profile-Picture{
-    width: 500px;
+    max-width: 600px;
     height: auto;
 }
 
@@ -29,17 +33,72 @@
     }
     
     .flex-Container {
-      flex-direction: column; /* ✅ stack columns vertically */
+      flex-direction: column;
     }
   
     .column {
-        //margin-bottom: 20px;
-        width: 100%; /* optional, make full width on mobile */
+        width: 100%; 
     }
   
     .profile-Picture{
         width: auto;
         height: 500px;
     }
+}
+
+i{
+    font-size: 60px; 
+    font-weight: bold;
+}
+
+.angled-box1 {
+    background-color: var(--header-color);
+    padding: 30px 40px;
+    margin: 40px 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.angled-box2 {
+    background-color: var(--header-color);
+    padding: 30px 40px;
+    margin: 40px 0;
+    width: 100%;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
   }
-  
+
+.centered-text-box {
+  background-color: var(--translucent-box-color);
+  color: white;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  max-width: 600px;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#education{
+    margin-top: -90px;
+}
+
+.education-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    background-image: url("/assets/images/uc.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin-bottom: -100px;
+}
+ 
