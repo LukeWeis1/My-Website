@@ -27,7 +27,7 @@ export class HeaderComponent {
     else{
       root.style.setProperty("--background-color", "white");
       root.style.setProperty("--text-color", "black");
-      root.style.setProperty("--header-color", "#dbdbdb");
+      root.style.setProperty("--header-color", "white");
       root.style.setProperty("--link-color", "#82c5f2");
       root.style.setProperty("--translucent-box-color", "rgba(255, 255, 255, 0.8)")
     }

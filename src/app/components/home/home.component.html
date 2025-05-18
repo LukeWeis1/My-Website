@@ -30,7 +30,6 @@
 </h2>
         </div>
     </div>
-    <!-- your education content -->
   </section>
   
   <section id="experience">
@@ -38,19 +37,29 @@
         <h3><i class="fas fa-briefcase"></i></h3>
         <h3>Experience</h3>
     </div>
-    <!-- your experience content -->
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
+    <div class="experience-container">
+    <div class="flip-card" *ngFor="let card of experienceCards" (click)="flipCard(card)">
+      <div class="flip-inner" [class.flipped]="card.flipped">
+        <div class="flip-front">
+          <div class="card-image">
+            <img [src]="card.image" [alt]="card.title" />
+          </div>
+          <div class="card-text">
+            <h3>{{ card.title }}</h3>
+            <h5>{{ card.subtitle }}</h5>
+            <h2>{{ card.date }}</h2>
+            <div class="flip-icon"><i class="fas fa-repeat"></i></div>
+          </div>
+        </div>
+        <div class="flip-back">
+          <h3>Responsibilities & Contributions</h3>
+          <ul>
+            <li *ngFor="let item of card.details">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   </section>
   
   <section id="projects">
