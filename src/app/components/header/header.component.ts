@@ -22,14 +22,16 @@ export class HeaderComponent {
       root.style.setProperty("--text-color", "white");
       root.style.setProperty("--header-color", "#383838");
       root.style.setProperty("--link-color", "lightblue");
-      root.style.setProperty("--translucent-box-color", "rgba(0, 0, 0, 0.8)")
+      root.style.setProperty("--translucent-box-color", "rgba(0, 0, 0, 0.8)");
+      root.style.setProperty("--contact-form-color", "#666");
     }
     else{
       root.style.setProperty("--background-color", "white");
       root.style.setProperty("--text-color", "black");
       root.style.setProperty("--header-color", "white");
       root.style.setProperty("--link-color", "#82c5f2");
-      root.style.setProperty("--translucent-box-color", "rgba(255, 255, 255, 0.8)")
+      root.style.setProperty("--translucent-box-color", "rgba(255, 255, 255, 0.8)");
+      root.style.setProperty("--contact-form-color", "white");
     }
   }
 }

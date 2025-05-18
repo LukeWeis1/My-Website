@@ -2,12 +2,14 @@ import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
+import emailjs from '@emailjs/browser';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, HeaderComponent, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 
 export class HomeComponent implements AfterViewInit {
@@ -85,5 +87,39 @@ export class HomeComponent implements AfterViewInit {
 
   flipCard(card: any) {
     card.flipped = !card.flipped;
+  }
+
+  //Contact Me Form Code
+  userName: string = '';
+  userEmail: string = '';
+  userMessage: string = '';
+  messageSent: boolean = false;
+
+  sendEmail(event: Event) {
+    event.preventDefault(); // Prevents page reload
+
+    const templateParams = {
+      from_name: this.userName,
+      from_email: this.userEmail,
+      message: this.userMessage
+    };
+
+    emailjs.send('service_gdem8qc', 'template_m56pmft', templateParams, '_4EfJNETeXfZmWGuz')
+      .then(response => {
+        console.log('Email sent!', response.status, response.text);
+        this.messageSent = true; // Show success message
+
+         //Clear input fields
+        this.userName = '';
+        this.userEmail = '';
+        this.userMessage = '';
+
+        setTimeout(() => {
+          this.messageSent = false;
+        }, 3000);
+      })
+      .catch(error => {
+        console.error('Error sending email:', error);
+      });
   }
 }
