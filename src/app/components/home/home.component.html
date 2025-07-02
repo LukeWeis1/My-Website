@@ -38,20 +38,20 @@
         <h3>Experience</h3>
     </div>
     <div class="experience-container">
-    <div class="flip-card" *ngFor="let card of experienceCards" (click)="flipCard(card)">
-      <div class="flip-inner" [class.flipped]="card.flipped">
-        <div class="flip-front">
-          <div class="card-image">
+    <div class="experience-flip-card" *ngFor="let card of experienceCards" (click)="flipCard(card)">
+      <div class="experience-flip-inner" [class.flipped]="card.flipped">
+        <div class="experience-flip-front">
+          <div class="experience-card-image">
             <img [src]="card.image" [alt]="card.title" />
           </div>
-          <div class="card-text">
+          <div class="experience-card-text">
             <h3>{{ card.title }}</h3>
             <h5>{{ card.subtitle }}</h5>
             <h2>{{ card.date }}</h2>
             <div class="flip-icon"><i class="fas fa-repeat"></i></div>
           </div>
         </div>
-        <div class="flip-back">
+        <div class="experience-flip-back">
           <h3>Responsibilities & Contributions</h3>
           <ul>
             <li *ngFor="let item of card.details">{{ item }}</li>
@@ -87,19 +87,18 @@
         <h3><i class="fas fa-users"></i></h3>
         <h3>Involvement</h3>
     </div>
-    <!-- your involvement content -->
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
+    <div class="involvement-container">
+      <div class="involvement-card" *ngFor="let card of involvementCards">
+            <div class="involvement-card-image">
+              <img [src]="card.image" [alt]="card.title" />
+            </div>
+            <div class="involvement-card-text">
+              <h3>{{ card.title }}</h3>
+              <h2><strong>{{ card.date }}</strong></h2>
+              <h2>{{card.details}}</h2>
+             </div>
+          </div>
+        </div>
   </section>
   
   <section id="contact">
