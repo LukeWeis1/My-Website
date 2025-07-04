@@ -89,6 +89,19 @@ export class HomeComponent implements AfterViewInit {
     card.flipped = !card.flipped;
   }
 
+  //Logic for Projects tabs
+  selectedTab = 0;
+
+  tabs = [
+    { title: 'Personal Website' },
+    { title: 'Engineering Lego Robot' },
+  ];
+
+  selectTab(index: number) {
+    this.selectedTab = index;
+  }
+
+
 
   //Data for Involvement Section
   involvementCards = [

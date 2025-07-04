@@ -67,19 +67,37 @@
         <h3><i class="fas fa-tools"></i></h3>
         <h3>Projects</h3>
     </div>
-    <!-- your project content -->
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
+    <div class="tab-container">
+      <div class="tab-header">
+        <button
+          *ngFor="let tab of tabs; let i = index"
+          [class.active]="selectedTab === i"
+          (click)="selectTab(i)"
+        >
+          {{ tab.title }}
+        </button>
+      </div> 
+      <div class="tab-content">
+        <div *ngIf="selectedTab === 0" class="tab-panel">
+          <h3>Personal Website</h3>
+          <div class="project-content">
+            <img src="assets/images/LCS.jpg" alt="Personal Website" />
+            <div class="project-text">
+              <h2>This is the description</h2>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectedTab === 1" class="tab-panel">
+          <h3>Engineering Lego Robot</h3>
+          <div class="project-content">
+            <img src="assets/images/uc.jpg" alt="Personal Website" />
+            <div class="project-text">
+              <h2>This is the description</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   
   <section id="involvement">
