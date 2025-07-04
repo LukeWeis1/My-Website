@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import emailjs from '@emailjs/browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -149,31 +149,35 @@ export class HomeComponent implements AfterViewInit {
   userMessage: string = '';
   messageSent: boolean = false;
 
-  sendEmail(event: Event) {
-    event.preventDefault(); // Prevents page reload
+sendEmail(form: NgForm) {
+  if (!form.valid) {
+    return; // Stops submission if form is invalid
+  }
 
-    const templateParams = {
-      from_name: this.userName,
-      from_email: this.userEmail,
-      message: this.userMessage
-    };
+  const templateParams = {
+    from_name: this.userName,
+    from_email: this.userEmail,
+    message: this.userMessage,
+  };
 
-    emailjs.send('service_gdem8qc', 'template_m56pmft', templateParams, '_4EfJNETeXfZmWGuz')
-      .then(response => {
-        console.log('Email sent!', response.status, response.text);
-        this.messageSent = true; // Show success message
+  emailjs
+    .send('service_gdem8qc', 'template_m56pmft', templateParams, '_4EfJNETeXfZmWGuz')
+    .then((response) => {
+      console.log('Email sent!', response.status, response.text);
+      this.messageSent = true;
 
-         //Clear input fields
-        this.userName = '';
-        this.userEmail = '';
-        this.userMessage = '';
+      this.userName = '';
+      this.userEmail = '';
+      this.userMessage = '';
+      form.resetForm();
 
-        setTimeout(() => {
-          this.messageSent = false;
-        }, 3000);
-      })
-      .catch(error => {
-        console.error('Error sending email:', error);
-      });
+      setTimeout(() => {
+        this.messageSent = false;
+      }, 3000);
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+    });
   }
 }
+
