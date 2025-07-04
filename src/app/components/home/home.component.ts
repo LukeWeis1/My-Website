@@ -41,7 +41,19 @@ export class HomeComponent implements AfterViewInit {
   
     requestAnimationFrame(onScroll);
   }
-  
+
+  //Awards Popup Logic
+  activePopup: string | null = null;
+
+  openPopup(popupName: string) {
+    this.activePopup = popupName;
+  }
+
+  closePopup() {
+    this.activePopup = null;
+  }
+
+
   //Data for experience cards
   experienceCards = [
     {
