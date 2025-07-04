@@ -200,3 +200,19 @@ input:checked + .slider .sun {
 input:checked + .slider .moon {
     opacity: 1;
 }
+
+//Code for progress bar
+.progress-container {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  height: 5px;
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--link-color);
+  width: 0%;
+}

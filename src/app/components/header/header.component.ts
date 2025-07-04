@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -33,5 +33,14 @@ export class HeaderComponent {
       root.style.setProperty("--translucent-box-color", "rgba(255, 255, 255, 0.8)");
       root.style.setProperty("--contact-form-color", "white");
     }
+  }
+
+  scrollPercentage = 0;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    this.scrollPercentage = (scrollTop / scrollHeight) * 100;
   }
 }

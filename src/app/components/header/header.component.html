@@ -13,15 +13,17 @@
         <li [class.active]="activeSection === 'contact'"><a href="#contact">Contact Me</a></li>
       </ul>
     </nav>
-</div>
-  
-    <div class="header-right">
-      <label class="switch">
-        <input type="checkbox" checked (change)="toggleDarkMode()" />
-        <span class="slider">
-          <span class="icon sun">☀️</span>
-          <span class="icon moon">🌙</span>
-        </span>
-      </label>
-    </div>
   </div>
+  <div class="header-right">
+    <label class="switch">
+      <input type="checkbox" checked (change)="toggleDarkMode()" />
+      <span class="slider">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+      </span>
+    </label>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" [style.width.%]="scrollPercentage"></div>
+  </div>
+</div>
