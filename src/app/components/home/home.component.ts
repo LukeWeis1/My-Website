@@ -5,10 +5,11 @@ import { HeaderComponent } from "../header/header.component";
 import emailjs from '@emailjs/browser';
 import { FormsModule, NgForm } from '@angular/forms';
 import { InvolvementComponent } from "../involvement/involvement.component";
+import { ProjectsComponent } from "../projects/projects.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent],
+  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -103,16 +104,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   //Logic for Projects tabs
-  selectedTab = 0;
-
-  tabs = [
-    { title: 'Personal Website' },
-    { title: 'Engineering Lego Robot' },
-  ];
-
-  selectTab(index: number) {
-    this.selectedTab = index;
-  }
+  
 
 
 
