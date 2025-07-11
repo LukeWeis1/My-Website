@@ -1,0 +1,23 @@
+<div class="experience-container">
+    <div class="experience-flip-card" *ngFor="let card of experienceCards" (click)="flipCard(card)">
+        <div class="experience-flip-inner" [class.flipped]="card.flipped">
+        <div class="experience-flip-front">
+            <div class="experience-card-image">
+            <img [src]="card.image" [alt]="card.title" />
+            </div>
+            <div class="experience-card-text">
+            <h3>{{ card.title }}</h3>
+            <h5>{{ card.subtitle }}</h5>
+            <h2>{{ card.date }}</h2>
+            <div class="flip-icon"><i class="fas fa-repeat"></i></div>
+            </div>
+        </div>
+        <div class="experience-flip-back">
+            <h3>Responsibilities & Contributions</h3>
+            <ul>
+            <li *ngFor="let item of card.details">{{ item }}</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>

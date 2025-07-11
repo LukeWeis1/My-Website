@@ -1,0 +1,90 @@
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.experience-container li{
+    font-family: 'Futura', sans-serif;
+    font-size: 24px;
+    color: var(--text-color);
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.experience-container h5,
+.experience-container h3, 
+.experience-container h2{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+.experience-flip-card {
+  width: 600px;
+  height: 700px;
+  perspective: 1000px;
+}
+
+.experience-flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.experience-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.experience-flip-front,
+.experience-flip-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-flip-front {
+  background-color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.experience-card-text {
+  padding: 0px;
+  position: relative;
+}
+
+.flip-icon i {
+  position: absolute;
+  bottom: -80px;
+  right: 10px;
+  font-size: 30px;
+  color: #666;
+}
+
+.experience-flip-back {
+  background-color: var(--header-color);
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  flex-direction: column;
+}
