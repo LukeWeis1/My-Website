@@ -143,21 +143,10 @@
   
   <section id="involvement">
     <div class="angled-box2">
-        <h3><i class="fas fa-users"></i></h3>
-        <h3>Involvement</h3>
+      <h3><i class="fas fa-users"></i></h3>
+      <h3>Involvement</h3>
     </div>
-    <div class="involvement-container">
-      <div class="involvement-card" *ngFor="let card of involvementCards">
-            <div class="involvement-card-image">
-              <img [src]="card.image" [alt]="card.title" />
-            </div>
-            <div class="involvement-card-text">
-              <h3>{{ card.title }}</h3>
-              <h2><strong>{{ card.date }}</strong></h2>
-              <h2>{{card.details}}</h2>
-             </div>
-          </div>
-        </div>
+    <app-involvement></app-involvement>
   </section>
   
   <section id="contact">
