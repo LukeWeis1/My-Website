@@ -7,10 +7,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { InvolvementComponent } from "../involvement/involvement.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ExperienceComponent } from "../experience/experience.component";
+import { EducationComponent } from "../education/education.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent, ExperienceComponent],
+  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent, ExperienceComponent, EducationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -46,15 +47,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   //Awards Popup Logic
-  activePopup: string | null = null;
 
-  openPopup(popupName: string) {
-    this.activePopup = popupName;
-  }
-
-  closePopup() {
-    this.activePopup = null;
-  }
 
 
   //Data for experience cards
