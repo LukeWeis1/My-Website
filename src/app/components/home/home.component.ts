@@ -2,16 +2,17 @@ import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
-import emailjs from '@emailjs/browser';
+
 import { FormsModule, NgForm } from '@angular/forms';
 import { InvolvementComponent } from "../involvement/involvement.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ExperienceComponent } from "../experience/experience.component";
 import { EducationComponent } from "../education/education.component";
+import { ContactMeComponent } from "../contact-me/contact-me.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent, ExperienceComponent, EducationComponent],
+  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent, ExperienceComponent, EducationComponent, ContactMeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -62,40 +63,6 @@ export class HomeComponent implements AfterViewInit {
   
 
   //Contact Me Form Code
-  userName: string = '';
-  userEmail: string = '';
-  userMessage: string = '';
-  messageSent: boolean = false;
-
-sendEmail(form: NgForm) {
-  if (!form.valid) {
-    return; // Stops submission if form is invalid
-  }
-
-  const templateParams = {
-    from_name: this.userName,
-    from_email: this.userEmail,
-    message: this.userMessage,
-  };
-
-  emailjs
-    .send('service_gdem8qc', 'template_m56pmft', templateParams, '_4EfJNETeXfZmWGuz')
-    .then((response) => {
-      console.log('Email sent!', response.status, response.text);
-      this.messageSent = true;
-
-      this.userName = '';
-      this.userEmail = '';
-      this.userMessage = '';
-      form.resetForm();
-
-      setTimeout(() => {
-        this.messageSent = false;
-      }, 3000);
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-    });
-  }
+  
 }
 

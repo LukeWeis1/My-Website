@@ -49,55 +49,5 @@
         <h3><i class="fas fa-envelope"></i></h3>
         <h3>Contact Me</h3>
     </div>
-   <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)" novalidate>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="userName"
-        [(ngModel)]="userName"
-        #name="ngModel"
-        required
-        [ngClass]="{ 'invalid': name.invalid && name.touched }"
-      />
-      <div class="error-message" *ngIf="name.invalid && name.touched">
-        Name is required.
-      </div>
-
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="userEmail"
-        [(ngModel)]="userEmail"
-        #email="ngModel"
-        required
-        email
-        [ngClass]="{ 'invalid': email.invalid && email.touched }"
-      />
-      <div *ngIf="email.invalid && email.touched" class="error-message">
-        <div *ngIf="email.errors?.['required']">Email is required.</div>
-        <div *ngIf="email.errors?.['email']">Enter a valid email address.</div>
-      </div>
-
-      <label for="message">Message:</label>
-      <textarea
-        id="message"
-        name="userMessage"
-        [(ngModel)]="userMessage"
-        #message="ngModel"
-        required
-        [ngClass]="{ 'invalid': message.invalid && message.touched }"
-      ></textarea>
-      <div class="error-message" *ngIf="message.invalid && message.touched">
-        Message is required.
-      </div>
-      <button type="submit" [disabled]="!contactForm.valid">Send</button>
-    </form>
-  
-  <div *ngIf="messageSent" class="messageSentText">
-    <p>Your message has been sent!</p>
-  </div>
-  
-  <h2>You can also contact me at lukeweis&#64;outlook.com, or via the links in the footer.</h2>
+   <app-contact-me></app-contact-me>
   </section>
