@@ -1,9 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 
-import { FormsModule, NgForm } from '@angular/forms';
 import { InvolvementComponent } from "../involvement/involvement.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { ExperienceComponent } from "../experience/experience.component";
@@ -12,7 +10,7 @@ import { ContactMeComponent } from "../contact-me/contact-me.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, HeaderComponent, CommonModule, FormsModule, InvolvementComponent, ProjectsComponent, ExperienceComponent, EducationComponent, ContactMeComponent],
+  imports: [HeaderComponent, CommonModule, InvolvementComponent, ProjectsComponent, ExperienceComponent, EducationComponent, ContactMeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -46,23 +44,5 @@ export class HomeComponent implements AfterViewInit {
   
     requestAnimationFrame(onScroll);
   }
-
-  //Awards Popup Logic
-
-
-
-  //Data for experience cards
-
-
-  //Logic for Projects tabs
-  
-
-
-
-  //Data for Involvement Section
-  
-
-  //Contact Me Form Code
-  
 }
 
