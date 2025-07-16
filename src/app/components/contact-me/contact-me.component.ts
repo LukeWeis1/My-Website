@@ -16,8 +16,11 @@ userName: string = '';
   messageSent: boolean = false;
 
 sendEmail(form: NgForm) {
-  if (!form.valid) {
-    return; // Stops submission if form is invalid
+    if (!form.valid) {
+    Object.values(form.controls).forEach(control => {
+      control.markAsTouched();
+    });
+    return; //Stops submission and displays validation errors if invalid form
   }
 
   const templateParams = {

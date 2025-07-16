@@ -42,7 +42,7 @@
       <div class="error-message" *ngIf="message.invalid && message.touched">
         Message is required.
       </div>
-      <button type="submit" [disabled]="!contactForm.valid">Send</button>
+      <button type="submit">Send</button>
     </form>
   
   <div *ngIf="messageSent" class="messageSentText">
