@@ -16,31 +16,58 @@
             <div class="project-text">
               <h2>
                 This personal website was developed as a modern single-page application using Angular, designed to provide a clean, intuitive, and professional browsing experience. The navigation dynamically highlights the active section as users scroll, implemented through an Intersection Observer, offering seamless visual cues that enhance usability and orientation throughout the site.
-                <br>
-                <br>
+                <br><br>
                 Several interactive and visually engaging features have been incorporated to elevate the user experience. The experience section utilizes responsive flip-boxes that reveal detailed information on the reverse side when clicked, while the involvement section presents its content through traditional cards arranged in a balanced layout. Within the projects section, a tabbed interface allows visitors to explore multiple projects efficiently without overwhelming the page with excessive content.
-                <br>
-                <br>
+                <br><br>
                 Styling is managed through SCSS, leveraging variables, nesting, and media queries to ensure the website maintains a polished and cohesive appearance across devices. Design elements such as angled section headers, translucent text boxes layered over background imagery, and smooth visual transitions add depth and a modern aesthetic, all while preserving readability and focus. Flexbox and carefully selected breakpoints ensure the layout remains responsive, adapting between desktop and mobile views.
-                <br>
-                <br>
+                <br><br>
                 The contact section includes a functional form integrated with EmailJS, enabling visitors to submit messages directly without requiring a dedicated backend. The form features real-time validation, contextual error messages, and clear visual indicators, guiding users to correct any mistakes in their entries promptly. Subtle enhancements, such as a persistent dark mode toggle and the use of Font Awesome icons contribute to the site's cohesive branding and visual identity.
-                <br>
-                <br>
+                <br><br>
                 Altogether, this project demonstrates the practical application of modern frontend technologies, responsive design principles, and user-centric features to deliver a professional and engaging digital portfolio.
-                <br>
-                <br>
-                The code for this project can be found here.
+                <br><br>
+                The code for this project can be found <a href="https://github.com/LukeWeis1/My-Website">here</a>.
               </h2>
             </div>
           </div>
         </div>
         <div *ngIf="selectedTab === 1" class="tab-panel">
-          <h3>Engineering Lego Robot</h3>
+          <h3> Autonomous Warehouse Robot</h3>
+          <div class="project-content">
+            <img src="assets/images/WarehouseRobot.jpg" alt="Personal Website" />
+            <div class="project-text">
+              <h2>
+                During an engineering design course at the University of Cincinnati, our team developed an autonomous warehouse robot capable of navigating aisles, scanning barcodes, avoiding obstacles, and transporting containers to designated locations. The goal was to design a robot that could operate efficiently and accurately within a warehouse environment, simulating real-world logistics automation challenges. The project involved iterative mechanical design, sensor integration, and system programming to create a reliable, task-oriented robot.
+                <br><br>
+                I contributed to the programming and mechanical design of the robot, writing and refining code primarily in Python. The final system controlled various functions: navigating precise distances, executing complex turning sequences, lifting and placing containers, and reading barcodes with color sensors. The code was iteratively tested and optimized to handle differences in motor strength, adjust gear ratios for torque, and synchronize movements to ensure accurate operation in the warehouse layout.
+                <br><br>
+                The robot’s design evolved through multiple iterations. Early prototypes focused on stable locomotion, starting with a four-wheel drive system that was later refined by adding a marble wheel for smoother turns and a gyroscopic sensor for precise angle detection. For the lifting mechanism, several gear ratios were tested to increase torque, allowing the arm to lift loads of up to 200 grams reliably. The final design balanced functionality and stability, incorporating ultrasonic and color sensors to handle barcode scanning and object avoidance.
+                <br><br>
+                In addition to technical challenges, the project required detailed planning and documentation. We created morphological charts, design matrices, Gantt charts, and testing plans to guide development and validate performance. The robot was tested under conditions simulating real warehouse scenarios, achieving strong accuracy rates in barcode scanning, navigation, and object handling. Through this experience, I expanded my skills in Python programming, mechanical system design, and iterative problem solving, while also gaining a deeper appreciation for teamwork and the complexities of automating physical tasks.
+              </h2>
+            </div>
+          </div>
+          <h2 class="pdfButton" (click)="togglePdfVisibility()">Click here to view the design notebook for this project.</h2>
+          <div *ngIf="isWarehouseRobotPdfVisible" class="pdf-overlay">
+            <button (click)="togglePdfVisibility()" class="close-button">&times;</button>
+            <div class="pdf-content-wrapper">
+              <iframe src="assets/documents/WarehouseRobot.pdf"></iframe>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectedTab === 2" class="tab-panel">
+          <h3> Autonomous Terrain-Navigating Sorting Robot</h3>
           <div class="project-content">
             <img src="assets/images/LegoRobot.jpg" alt="Personal Website" />
             <div class="project-text">
-              <h2>This is the description</h2>
+              <h2>
+                As part of an engineering design course at the University of Cincinnati, our team developed an autonomous Lego robot designed to navigate uneven terrain, recognize visual cues, and sort payloads by weight for a simulated carbon sequestration and disaster clean-up scenario. Drawing inspiration from the movement of ants, squirrels, and turtles, we applied biomimicry principles to guide the robot’s walking mechanism, allowing it to operate effectively on rough surfaces without the use of wheels or GPS.
+                <br><br>
+                I served as the lead programmer for the project, using LabVIEW to write and organize over 100 blocks of code that powered the robot’s core functionality. This included programming dual color sensors to detect and follow lines, integrating an ultrasonic sensor to identify nearby obstacles, and coordinating a lifting arm and force sensor to classify containers as organic, ceramic, or metal based on weight. The robot operated autonomously, continuously analyzing its environment and adjusting its behavior in real time.
+                <br><br>
+                Beyond the technical design, our team focused on thorough project planning and ethical considerations. We created detailed Gantt charts, work-breakdown structures, and functional block diagrams to manage development and ensure timely progress. We also reflected on ethical aspects such as designing technology for disaster response and the responsibility of using innovation to address real-world challenges.
+                <br><br>
+                The project culminated in a successful final demonstration, where the robot autonomously navigated a predefined course, detected and lifted containers, and sorted them by weight. Through this experience, I not only deepened my technical skills in programming and system integration but also strengthened my understanding of teamwork, iterative design, and the human impact of engineering solutions.
+              </h2>
             </div>
           </div>
         </div>

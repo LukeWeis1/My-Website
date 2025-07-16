@@ -12,8 +12,15 @@ export class ProjectsComponent {
 
   tabs = [
     { title: 'Personal Website' },
-    { title: 'Engineering Lego Robot' },
+    { title: 'Autonomous Warehouse Robot' },
+    { title: 'Autonomous Terrain-Navigating Sorting Robot' },
   ];
+
+  isWarehouseRobotPdfVisible = false;
+
+  togglePdfVisibility(): void {
+    this.isWarehouseRobotPdfVisible = !this.isWarehouseRobotPdfVisible;
+  }
 
   selectTab(index: number) {
     this.selectedTab = index;
