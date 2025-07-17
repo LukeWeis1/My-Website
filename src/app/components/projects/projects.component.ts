@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnDestroy{
   selectedTab = 0;
 
   tabs = [
@@ -20,9 +20,20 @@ export class ProjectsComponent {
 
   togglePdfVisibility(): void {
     this.isWarehouseRobotPdfVisible = !this.isWarehouseRobotPdfVisible;
+    if (this.isWarehouseRobotPdfVisible) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   }
 
   selectTab(index: number) {
     this.selectedTab = index;
+  }
+
+  ngOnDestroy(): void {
+    if(this.isWarehouseRobotPdfVisible){
+      document.body.classList.remove('no-scroll');
+    }
   }
 }

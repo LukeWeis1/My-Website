@@ -5,10 +5,10 @@ html {
 }
 
 :root {
-    --background-color: black; /* Default background color */
-    --text-color: white; /* Default text color */
-    --header-color: #383838; /*Default header color*/
-    --link-color: lightblue; /*Default link color*/
+    --background-color: black;
+    --text-color: white;
+    --header-color: #383838;
+    --link-color: lightblue;
     --translucent-box-color: rgba(0, 0, 0, 0.8);
     --contact-form-color: #666;
 }
@@ -66,4 +66,9 @@ h5{
     color: var(--text-color);
     font-weight: bold;
     text-align: center;
+}
+
+
+body.no-scroll {
+  overflow: hidden; //Disables scrolling when pdf is visible
 }

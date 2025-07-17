@@ -15,7 +15,11 @@ export class ExperienceComponent {
       date: 'May 2025 - August 2025',
       image: 'assets/images/LCS.jpg',
       details: [
-        'Currently in progress'
+        'Improved performance and maintainability of Rent Manager Express (RMX) by refactoring and optimizing Angular front-end components and corresponding C# backend controllers and providers, reducing redundant API calls and leveraging existing business logic.',
+        'Resolved several bug tickets, contributing to product stability and a smoother user experience.',
+        'Refactored legacy code to align with modern best practices, improving scalability and maintainability within an enterprise application.',
+        'Collaborated closely with cross-functional teams in an Agile environment, participating in sprint planning, daily stand-ups, and code reviews.'
+
       ],
       flipped: false
     },
