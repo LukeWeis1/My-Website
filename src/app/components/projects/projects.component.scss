@@ -11,8 +11,13 @@
 .tab-header {
   display: flex;
   justify-content: left;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
   border-bottom: 2px solid var(--text-color);
   margin-bottom: 20px;
+
+  -webkit-overflow-scrolling: touch;
 
   button {
     background: none;
@@ -35,12 +40,20 @@
     &:hover {
       color: var(--link-color);
     }
-
-    @media (max-width: 950px) {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
   }
+}
+
+.tab-header::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tab-header::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-header::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 3px;
 }
 
 .tab-content {

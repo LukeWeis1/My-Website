@@ -6,15 +6,6 @@
   padding: 40px;
 }
 
-.involvement-container li{
-    font-family: 'Futura', sans-serif;
-    font-size: 24px;
-    color: var(--text-color);
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
 .involvement-container h3, 
 .involvement-container h2{
     margin-top: 30px;
@@ -25,7 +16,8 @@
 
 .involvement-card {
   width: 600px;
-  height: 775px;
+  padding-bottom: 40px;
+  height: auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

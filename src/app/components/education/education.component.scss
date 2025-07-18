@@ -78,6 +78,12 @@
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+.award-description.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
 .award-wrapper:hover .award-description {
   opacity: 1;
   visibility: visible;
