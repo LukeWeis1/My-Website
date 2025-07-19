@@ -9,6 +9,8 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class ProjectsComponent implements OnDestroy{
   selectedTab = 0;
+  isIOS = false;
+  isWarehouseRobotPdfVisible = false;
 
   tabs = [
     { title: 'Personal Website' },
@@ -16,7 +18,9 @@ export class ProjectsComponent implements OnDestroy{
     { title: 'Autonomous Terrain-Navigating Sorting Robot' },
   ];
 
-  isWarehouseRobotPdfVisible = false;
+   constructor() {
+    this.isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  }
 
   togglePdfVisibility(): void {
     this.isWarehouseRobotPdfVisible = !this.isWarehouseRobotPdfVisible;

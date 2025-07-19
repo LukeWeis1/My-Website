@@ -50,14 +50,15 @@
           <div *ngIf="isWarehouseRobotPdfVisible" class="pdf-overlay">
             <button (click)="togglePdfVisibility()" class="close-button">&times;</button>
             <div class="pdf-content-wrapper">
-               <object 
-                  data="assets/documents/WarehouseRobot.pdf"
-                  type="application/pdf"
-                  width="100%" height="100%">
-                  <p>Your browser does not support PDFs. 
-                    <a href="assets/documents/WarehouseRobot.pdf">Download it here.</a>
-                  </p>
-                </object>
+              <ng-container *ngIf="!isIOS; else downloadLink">
+                <iframe src="assets/documents/WarehouseRobot.pdf"></iframe>
+              </ng-container>
+              <ng-template #downloadLink>
+                <h2>
+                  PDF viewer is not supported on iOS. 
+                  <a href="assets/documents/WarehouseRobot.pdf" target="_blank" rel="noopener">Click here to open the design notebook</a>.
+                </h2>
+              </ng-template>
             </div>
           </div>
         </div>
