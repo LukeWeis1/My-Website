@@ -18,8 +18,10 @@ export class ProjectsComponent implements OnDestroy{
     { title: 'Autonomous Terrain-Navigating Sorting Robot' },
   ];
 
-   constructor() {
-    this.isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  constructor() {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    this.isIOS = /iPad|iPhone|iPod/.test(userAgent)
+    || (navigator.userAgent.includes('Macintosh') && 'ontouchend' in document);
   }
 
   togglePdfVisibility(): void {
