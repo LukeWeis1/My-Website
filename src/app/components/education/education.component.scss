@@ -60,8 +60,6 @@
 }
 
 .award-description {
-  opacity: 0;
-  visibility: hidden;
   position: absolute;
   top: 120%;
   left: 50%;
@@ -75,13 +73,22 @@
   z-index: 10;
   white-space: normal;
   text-align: center;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
 }
 
-.award-description.visible {
-  opacity: 1;
+.award-description.show {
   visibility: visible;
+  opacity: 1;
   transform: translate(-50%, 0);
+}
+
+.award-description.hide {
+  opacity: 0;
+  transform: translate(-50%, 10px);
+  visibility: hidden;
 }
 
 .award-wrapper:hover .award-description {

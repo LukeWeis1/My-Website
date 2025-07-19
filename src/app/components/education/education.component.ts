@@ -7,23 +7,44 @@ import { Component, ElementRef, ViewChildren, QueryList, HostListener } from '@a
 })
 export class EducationComponent {
   activePopup: string | null = null;
+  animationState: { [key: string]: 'show' | 'hide' | '' } = {};
 
-  //Collects all award wrappers
   @ViewChildren('awardWrapper') awardWrappers!: QueryList<ElementRef>;
 
   togglePopup(popupName: string) {
-    this.activePopup = this.activePopup === popupName ? null : popupName;
+    if (this.activePopup === popupName) {
+      this.animationState[popupName] = 'hide';
+      setTimeout(() => {
+        this.activePopup = null;
+        this.animationState[popupName] = '';
+      }, 300);
+    } else {
+      if (this.activePopup) {
+        this.animationState[this.activePopup] = 'hide';
+        setTimeout(() => {
+          this.activePopup = popupName;
+          this.animationState[popupName] = 'show';
+        }, 300);
+      } else {
+        this.activePopup = popupName;
+        this.animationState[popupName] = 'show';
+      }
+    }
   }
 
-  //Listens for clicks on the whole document so that any click makes award popup disappear
   @HostListener('document:click', ['$event'])
   handleDocumentClick(event: Event) {
-    const clickedInside = this.awardWrappers.some(wrapper =>
+    const clickedInside = this.awardWrappers?.some(wrapper =>
       wrapper.nativeElement.contains(event.target)
     );
 
-    if (!clickedInside) {
-      this.activePopup = null;
+    if (!clickedInside && this.activePopup) {
+      const closingPopup = this.activePopup;
+      this.animationState[closingPopup] = 'hide';
+      setTimeout(() => {
+        this.activePopup = null;
+        this.animationState[closingPopup] = '';
+      }, 300);
     }
   }
 }
